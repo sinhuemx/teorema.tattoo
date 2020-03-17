@@ -1,1 +1,1 @@
-=== TEOREMA.TATTOO ===
+teorema.tattoo
