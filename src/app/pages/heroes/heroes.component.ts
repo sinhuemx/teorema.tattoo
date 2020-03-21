@@ -1,7 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+
 import { HeroesService } from "../../services/heroes.service";
 import { HeroeModel } from "../../models/heroe.model";
 import Swal from "sweetalert2";
+
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+
+
+
+
+
 
 @Component({
   selector: "app-heroes",
@@ -9,13 +18,18 @@ import Swal from "sweetalert2";
   styleUrls: ["./heroes.component.css"]
 })
 export class HeroesComponent implements OnInit {
+
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
   heroes: HeroeModel[] = [];
   cargando = false;
   title: string;
-  firstName: string;
+  nombreCompleto: string;
   lastName: string;
   therapy: string;
   actions: string;
+
+
 
   constructor(private heroesService: HeroesService) {}
 
@@ -24,19 +38,18 @@ export class HeroesComponent implements OnInit {
     this.heroesService.getHeroes().subscribe(resp => {
       this.heroes = resp;
       this.cargando = false;
-      this.title = "Patients";
-      this.firstName = "Patients";
-      this.lastName = "Patients";
-      this.therapy = "Therapy";
-      this.actions = "Patients";
+      this.title = "teorema.tattoo";
+      this.nombreCompleto = "Nombre Completo";
+      this.lastName = "Estilo";
+      this.therapy = "Status";
+      this.actions = "Acciones";
     });
   }
 
   deleteHeroe(heroe: HeroeModel, i: number) {
     Swal.fire({
-      title: "Really!",
-      text: `would you like delete ${heroe.patient}`,
-      type: "question",
+      title: "Seguro!?",
+      text: `Quieres hacer esto? ${heroe.patient}`,
       showConfirmButton: true,
       showCancelButton: true
     }).then(resp => {

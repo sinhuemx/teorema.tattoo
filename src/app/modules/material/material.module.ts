@@ -3,78 +3,59 @@ import { CommonModule } from '@angular/common';
 
 // Material
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+import { BidiModule } from '@angular/cdk/bidi';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CdkTableModule } from '@angular/cdk/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatListModule } from '@angular/material/list';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatRippleModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
 @NgModule({
   imports: [
-      MatToolbarModule,
+      CommonModule,
+      MatDatepickerModule,
+      OverlayModule,
+      PortalModule,
+      BidiModule,
+      MatTableModule,
       MatButtonModule,
-      MatInputModule,
-      MatIconModule,
-      MatMenuModule,
+      MatFormFieldModule,
+      CdkTableModule,
       MatCardModule,
       MatGridListModule,
-      MatListModule,
-      MatDividerModule,
-      MatFormFieldModule,
-      MatSidenavModule,
-      MatDialogModule,
-      MatSortModule,
-      MatTableModule,
-      MatPaginatorModule,
-      MatSnackBarModule,
-      CommonModule,
+      MatBadgeModule,
+      MatInputModule,
       MatSelectModule,
-      MatAutocompleteModule,
-      MatDatepickerModule,
-      MatButtonModule,
-      MatRippleModule
+      BrowserAnimationsModule
 
   ],
   exports: [
-      MatToolbarModule,
+      CommonModule,
+      MatDatepickerModule,
+      OverlayModule,
+      PortalModule,
+      BidiModule,
+      MatTableModule,
       MatButtonModule,
-      MatInputModule,
-      MatIconModule,
-      MatMenuModule,
+      MatFormFieldModule,
+      CdkTableModule,
       MatCardModule,
       MatGridListModule,
-      MatListModule,
-      MatDividerModule,
-      MatFormFieldModule,
-      MatDialogModule,
-      MatSidenavModule,
-      MatSortModule,
-      MatTableModule,
-      MatPaginatorModule,
-      MatSnackBarModule,
-      CommonModule,
+      MatBadgeModule,
+      MatInputModule,
       MatSelectModule,
-      MatAutocompleteModule,
-      MatDatepickerModule,
-      MatRippleModule
-
+      BrowserAnimationsModule
   ]
 })
 export class MaterialModule { }

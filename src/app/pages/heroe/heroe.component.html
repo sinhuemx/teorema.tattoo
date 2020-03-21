@@ -1,85 +1,71 @@
-<h1>{{ title }}</h1>
-<hr>
-<div class="row text-right">
-  <div class="col">
-    <button class="btn btn-danger"
-            routerLink="/heroes">
-      <i class="fa fa-arrow-left"></i>
-      Back
-    </button>
+
+
+<div class="pad-30 grid-2_xs-1">
+  <div class="col-6 bg-rose radius">
+          <div class="bold-text">
+                <h1><p class="top-10 text-center title-text purple-text left">{{ title }}</p></h1>
+            </div>
+        </div>
+  <div class="col-6 example-button-row">
+    <button class="right" mat-raised-button color="warn" routerLink="/heroes"><i class="material-icons">arrow_back</i>Volver</button>
   </div>
 </div>
+<div class="space-sm"></div>
+<div class="div-center grid-1_xs-1 div-opacity">
+  <div class="col-8 radius">
+      <mat-card >
+        <mat-card-content>
+          <form (ngSubmit)="guardar( f )" #f="ngForm">
 
-<div class="row animated fadeIn faster">
-  <div class="col">
+            <mat-form-field class="example-full-width">
+                <mat-label>Reservacion No.</mat-label>
+              <input matInput disabled [(ngModel)]="heroe.id" name="id">
+            </mat-form-field>
 
-    <form (ngSubmit)="guardar( f )"
-          #f="ngForm">
+            <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>{{ nombreCompleto }}</mat-label>
+                <input matInput type="text" [(ngModel)]="heroe.patient" name="patient" required>
+            </mat-form-field>
 
-      <div class="form-group">
-        <label>Firebase ID</label>
-        <input type="text"
-               class="form-control"
-               [(ngModel)]="heroe.id"
-               name="id"
-               disabled="disabled">
-      </div>
+            <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>{{ estilo }}</mat-label>
+                <input matInput type="text" [(ngModel)]="heroe.surname" name="surname" required>
+            </mat-form-field>
 
+                <div class="col">
+                    <mat-label>{{ state }}</mat-label>
+                </div>
 
-      <div class="form-group">
-          <label>{{ firstName }}</label>
-          <input type="text"
-                 class="form-control"
-                 [(ngModel)]="heroe.patient"
-                 name="patient"
-                 required>
-      </div>
+                <div class="col">
+                  <button mat-stroked-button *ngIf="heroe.status"
+                    (click)="heroe.status = false"
+                    class="bg-green text-white"
+                    type="button">
+                      <span class="material-icons">confirmation_number</span>
+                        {{ great }}
+                  </button>
+                  <button mat-stroked-button *ngIf="!heroe.status"
+                    (click)="heroe.status = true"
+                    class="bg-orange black-text"
+                    type="button">
+                      <span class="material-icons">speaker_notes_off</span>
+                        {{ needTherapy }}
+                  </button>
+                </div>
+                <div class="space-sm"></div>
+                <div class="col-12 text-center">
+                  <button mat-raised-button type="submit" class="bg-blue white-text"><span class="material-icons">save</span> Crear Cita</button>
+                </div>
 
-      <div class="form-group">
-          <label>{{ lastName }}</label>
-          <input type="text"
-                 class="form-control"
-                 [(ngModel)]="heroe.surname"
-                 name="surname"
-                 required>
-      </div>
-
-      <div class="form-group">
-        <label>{{ state }}</label>
-        <br>
-
-        <button *ngIf="heroe.status"
-                (click)="heroe.status = false"
-                class="btn btn-outline-success w-50" type="button">
-          <i class="fa fa-smile-wink"></i>
-          {{ great }}
-        </button>
-
-        <button *ngIf="!heroe.status"
-                (click)="heroe.status = true"
-                class="btn btn-outline-danger w-50" type="button">
-            <i class="fa fa-dizzy"></i>
-            {{ needTherapy }}
-        </button>
-
-      </div>
-
-
-
-      <hr>
-      <div class="form-group text-center">
-        <button type="submit"
-                class="btn btn-primary w-25">
-          <i class="fa fa-save"></i>
-          Save
-        </button>
-      </div>
-
-
-    </form>
+          </form>
+        </mat-card-content>
+      </mat-card>
 
 
   </div>
 </div>
+
+
+
 
 

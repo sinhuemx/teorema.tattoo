@@ -1,69 +1,61 @@
-<h1>{{ title }}</h1>
-<hr>
-<div class="row">
-  <div class="col text-right">
-    <button routerLink="/heroe/nuevo"
-            class="btn btn-primary">
-      <i class="fa fa-plus"></i>
-      Add patient
-    </button>
+
+<div class=" pad-30 grid-2_xs-1">
+    <div class="col-6 bg-rose radius">
+      <div class="bold-text">
+          <h1><p class="top-10 text-center title-text purple-text left">{{ title }}</p></h1>
+      </div>
+    </div>
+    <div class="col-6 example-button-row">
+      <button class="right bg-blue white-text" mat-raised-button  routerLink="/heroe/nuevo"><i class="material-icons white-text">add_circle</i>Agendar</button>
+    </div>
+</div>
+<div class="pad-30 div-center grid_xs-1">
+  <div class="col-12 table-responsive bg-gris radius div-opacity">
+      <table *ngIf="!cargando && heroes.length > 0"
+                  class="table table-hover animated fadeIn faster animated fadeIn ">
+              <thead class="bg-yellow">
+                <tr class="text-center text-bold">
+                  <th scope="col">ID</th>
+                  <th scope="col">{{ nombreCompleto }}</th>
+                  <th scope="col">{{ lastName }}</th>
+                  <th scope="col">{{ therapy }}</th>
+                  <th scope="col-4">{{ actions }}</th>
+                </tr>
+              </thead>
+              <div class="space-md"></div>
+              <tbody class="text-center">
+                <tr *ngFor="let heroe of heroes; let i = index">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ heroe.patient }}</td>
+                  <td>{{ heroe.surname }}</td>
+                  <td>
+                      <button mat-stroked-button disabled *ngIf="!heroe.status"class="bg-orange">
+                        <p class="material-icons black-text inline">speaker_notes_off</p>
+                          <p class="black-text inline"> Por Confirmar</p>
+                      </button>
+                      <button mat-stroked-button disabled *ngIf="heroe.status"class="bg-green">
+                        <p class="material-icons white-text inline">confirmation_number</p>
+                          <p class="white-text inline"> Reservado</p>
+                      </button>
+                  </td>
+                  <td>
+
+
+                    <button mat-stroked-button [routerLink]="['/heroe', heroe.id ]">
+                    <i class="material-icons ">edit</i>
+                    </button>
+
+                    <button mat-stroked-button  (click)="deleteHeroe( heroe, i ) ">
+                    <i class="material-icons ">delete</i>
+                    </button>
+
+
+                  </td>
+                </tr>
+              </tbody>
+      </table>
   </div>
 </div>
-<table *ngIf="!cargando && heroes.length > 0"
-       class="table mt-3 animated fadeIn faster animated fadeIn faster">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">{{ firstName }}</th>
-      <th scope="col">{{ lastName }}</th>
-      <th scope="col">{{ therapy }}</th>
-      <th scope="col">{{ actions }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let heroe of heroes; let i = index">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ heroe.patient }}</td>
-      <td>{{ heroe.surname }}</td>
-      <td>
-
-        <label *ngIf="heroe.status" class="badge badge-success">Great</label>
-        <label *ngIf="!heroe.status" class="badge badge-danger">Need Theraphy</label>
-
-      </td>
-      <td>
-
-        <button class="btn btn-info mr-1"
-                [routerLink]="['/heroe', heroe.id ]">
-          <i class="fa fa-pen"></i>
-        </button>
-
-        <button class="btn btn-danger"
-                (click)="deleteHeroe( heroe, i ) ">
-          <i class="fa fa-trash"></i>
-        </button>
 
 
-      </td>
-    </tr>
-  </tbody>
-</table>
 
-<div *ngIf="!cargando && heroes.length === 0"
-     class="alert alert-warning text-center mt-3 animated fadeIn faster">
-    <h4 class="alert-heading">No Data</h4>
-    <p>
-      <i class="fa fa-exclamation fa-2x"></i>
-    </p>
-</div>
-
-<div *ngIf="cargando"
-     class="alert alert-info text-center mt-3 animated fadeIn faster">
-  <h4 class="alert-heading">Loading...</h4>
-  <p>
-    <i class="fa fa-sync-alt fa-spin fa-2x"></i>
-  </p>
-  <p class="mb-0">
-    Wait!
-  </p>
-</div>

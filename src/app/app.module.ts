@@ -9,12 +9,15 @@ import { AppComponent } from './app.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { MaterialModule } from './modules/material/material.module';
+import { TableComponent } from './components/table/table.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroeComponent,
-    HeroesComponent
+    HeroesComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

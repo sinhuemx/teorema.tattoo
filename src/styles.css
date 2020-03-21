@@ -1,9 +1,288 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background-color: #e9e5ed;
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+html,
+body {
+    height: 100%;
 }
-.bg{
-  background-image: url(./assets/img/bk.jpg);
+
+body {
+    background-image: url(./assets/img/bk.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}
+
+p,
+a,
+li,
+div,
+b {
+    font-family: "Sen", sans-serif;
+    color: black;
+}
+
+
+/* Rules for sizing the icon. */
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+
+/* Rules for using icons as black on a light background. */
+
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+
+/* Rules for using icons as white on a dark background. */
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.material-icons.orange600 {
+    color: #fb8c00;
+}
+
+.material-icons.green600 {
+    color: rgb(55, 145, 20);
+}
+
+.example-button-row button,
+.example-button-row a {
+    margin-right: 8px;
+}
+
+.title-text {
+    font-family: "Pacifico", cursive;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.purple-text {
+    color: #460242;
+}
+
+.yellow-text {
+    color: #f2c204e6;
+}
+
+.top-10 {
+    margin: 10px;
+}
+
+.top-20 {
+    margin: 20px;
+}
+
+.top-30 {
+    margin: 30px;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-orange {
+    background-color: #fb8c00;
+}
+
+.bg-green {
+    background-color: #0c762a;
+}
+
+.bg-rose {
+    background-color: #d60aa0;
+}
+
+.bg-white {
+    background-color: #f8f8f8;
+}
+
+.bg-gris {
+    background-color: #cfc8c8;
+}
+
+.bg-blue2 {
+    background-color: #3a7c85;
+}
+
+.bg-yellow {
+    background-color: #f2c204e6;
+}
+
+.space-sm {
+    margin-top: 40px;
+}
+
+.space-md {
+    margin-top: 70px;
+}
+
+.space-xl {
+    margin-top: 100px;
+}
+
+.inline {
+    display: inline;
+}
+
+.pad-5 {
+    padding: 5px;
+}
+
+.pad-10 {
+    padding: 10px;
+}
+
+.pad-15 {
+    padding: 15px;
+}
+
+.pad-20 {
+    padding: 20px;
+}
+
+.pad-30 {
+    padding: 30px;
+}
+
+.pad-50 {
+    padding: 50px;
+}
+
+.pad-100 {
+    padding: 100px;
+}
+
+.div-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-opacity {
+    opacity: 0.9;
+}
+
+.box {
+    background: #f8f8f8;
+}
+
+.box:hover {
+    box-shadow: 0 0 11px #e6d7d8;
+}
+
+.radius {
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    -webkit-box-shadow: 0px 11px 0px 7px #00eeff;
+    -moz-box-shadow: 0px 11px 0px 7px #00eeff;
+    box-shadow: 0px 11px 0px 7px #00eeff;
+}
+
+.shadow {
+    -webkit-box-shadow: 1px -11px 0px 11px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 1px -11px 0px 11px rgba(0, 0, 0, 1);
+    box-shadow: 1px -11px 0px 11px rgba(0, 0, 0, 1);
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font: xx-large;
+    font-size: 16px;
 }

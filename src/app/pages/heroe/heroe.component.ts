@@ -8,6 +8,10 @@ import { HeroesService } from "../../services/heroes.service";
 
 import Swal from "sweetalert2";
 
+interface Estilo {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: "app-heroe",
   templateUrl: "./heroe.component.html",
@@ -15,23 +19,29 @@ import Swal from "sweetalert2";
 })
 export class HeroeComponent implements OnInit {
   title: string;
-  firstName: string;
-  lastName: string;
+  nombreCompleto: string;
+  estilo: string;
   great: string;
   needTherapy: string;
   state: string;
   heroe: HeroeModel = new HeroeModel();
 
+  foods: Estilo[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
   constructor(
     private heroesService: HeroesService,
     private route: ActivatedRoute
   ) {
-    this.title = "Add Patient";
-    this.state = "State";
-    this.firstName = "First Name";
-    this.lastName = "Last Name";
-    this.great = "Great!";
-    this.needTherapy = "Need Therapy";
+    this.title = "Agregar Cita";
+    this.state = "Status";
+    this.nombreCompleto = "Nombre Completo";
+    this.estilo = "Estilo";
+    this.great = "Reservado";
+    this.needTherapy = "No Confirmado";
   }
 
   ngOnInit() {
@@ -51,8 +61,8 @@ export class HeroeComponent implements OnInit {
     }
 
     Swal.fire({
-      title: "Wait",
-      text: "Go Ahead!",
+      title: "Un Segundo...",
+      text: "Adelante!",
       type: "info",
       allowOutsideClick: false
     });
@@ -69,7 +79,7 @@ export class HeroeComponent implements OnInit {
     peticion.subscribe(resp => {
       Swal.fire({
         title: this.heroe.patient,
-        text: "it was done successfully",
+        text: "Registro Correcto!",
         type: "success"
       });
     });
