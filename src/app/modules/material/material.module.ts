@@ -17,6 +17,16 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+
+
+
+
 
 
 
@@ -37,7 +47,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       MatBadgeModule,
       MatInputModule,
       MatSelectModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      MatMenuModule,
+      FlexLayoutModule,
+      MatToolbarModule,
+      MatSidenavModule,
+      MatListModule,
+      MatIconModule
 
   ],
   exports: [
@@ -55,7 +71,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       MatBadgeModule,
       MatInputModule,
       MatSelectModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      MatMenuModule,
+      FlexLayoutModule,
+      MatToolbarModule,
+      MatSidenavModule,
+      MatListModule,
+      MatIconModule
   ]
 })
 export class MaterialModule { }

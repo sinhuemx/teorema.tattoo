@@ -10,6 +10,8 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { MaterialModule } from './modules/material/material.module';
 import { TableComponent } from './components/table/table.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { ProyectosComponent } from './pages/proyectos/proyectos.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { TableComponent } from './components/table/table.component';
     AppComponent,
     HeroeComponent,
     HeroesComponent,
-    TableComponent
+    TableComponent,
+    MenuComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
